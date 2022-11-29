@@ -17,6 +17,9 @@ const { PORT, SECRET } = process.env;
 
 check();
 
+// импорт роутов
+const mainRouter = require('./routers/mainRouters');
+
 app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -40,6 +43,8 @@ app.use(express.urlencoded({ extended: true }));
 //     console.log('USER=====>>>>>', req.session.username);
 //     next();
 // });
+
+app.use('/', mainRouter);
 
 app.listen(PORT, async () => {
     console.log(`Сервер поднят на ${PORT} порту!`);
