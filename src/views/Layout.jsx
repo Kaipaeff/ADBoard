@@ -1,6 +1,9 @@
+
 const React = require('react');
 
 module.exports = function Layout({ children, newUser }) {
+
+
   return (
     <html lang="en">
       <head>
@@ -69,3 +72,4 @@ module.exports = function Layout({ children, newUser }) {
     </html>
   );
 };
+

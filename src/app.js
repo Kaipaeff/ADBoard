@@ -13,6 +13,7 @@ const check = require("../db/connectCheck");
 const indexRoutes = require("./routes/indexRoutes");
 const loginRoutes = require("./routes/loginRoutes");
 const regRoutes = require("./routes/regRoutes");
+const mainRouter = require('./routers/mainRouters');
 
 const app = express();
 
@@ -23,7 +24,6 @@ check();
 app.use(morgan("dev"));
 
 app.use(express.static(path.resolve("public")));
-
 // app.use(cors({ origin: true, credentials: true, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,11 +40,13 @@ const sessionConfig = {
   },
 };
 
+
 app.use(session(sessionConfig));
 
-app.use("/", indexRoutes);
+
 app.use("/login", loginRoutes);
 app.use("/register", regRoutes);
+app.use('/', mainRouter);
 
 app.get("/logout", async (req, res) => {
   console.log(req.query);
@@ -65,3 +67,6 @@ app.get("/logout", async (req, res) => {
 app.listen(PORT ?? 3000, () => {
   console.log(`Сервер поднят на ${PORT} порту!`);
 });
+
+
+
