@@ -1,4 +1,3 @@
-
 const React = require('react');
 
 module.exports = function Layout({ children, user }) {
@@ -25,14 +24,14 @@ module.exports = function Layout({ children, user }) {
           <div className="container-header">
             <nav className="navbar navbar-expand-lg bg-light nav-big">
               <div className="container-fluid">
-                <a className="navbar-brand" href="#"><img src="/img/logo.png" alt="logo" /></a>
+                <a className="navbar-brand" href="/"><img src="/img/logo.png" alt="logo" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon" />
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0 exit-ul">
                     <li className="nav-item">
-                      <a className="nav-link active apart" aria-current="page" href="#">Квартира</a>
+                      <a className="nav-link active apart" aria-current="page" href="/apart">Квартира</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link floor" href="#">Комната</a>
@@ -49,7 +48,7 @@ module.exports = function Layout({ children, user }) {
                       <a className="nav-link register" href="/register">Регистрация</a>
                     </li>
                     <img className="img-exit" src="/img/exit.png" alt="exit" />
-                    <li className="nav-item">
+                    <li className="nav-item exit-link">
                       <a className="nav-link exit" href="/login">Вход</a>
                     </li>
 
@@ -92,8 +91,30 @@ module.exports = function Layout({ children, user }) {
         {children}
 
       </body>
+
+      <footer>
+        <div className="footer-container">
+          <div className="left-block">
+            <a className="footer-logo" href="/"><img src="/img/logo.png" alt="logo" /></a>
+            <span>УДОБНЫЙ ПОИСК</span>
+            <span>АРЕНДНОЙ НЕДВИЖИМОСТИ</span>
+            <span>© Bears-2022</span>
+          </div>
+
+          <div className="center-block">
+            <a className="center-block-a" href="/apart">Квартиры</a>
+            <a className="center-block-a" href="/flat">Комнаты</a>
+            <a className="center-block-a" href="/house">Дома</a>
+          </div>
+
+          <div className="right-block">
+            <a className="right-block-a" href="#">Контакты</a>
+            <a className="right-block-a" href="#">Пользовательское соглашение</a>
+            <a className="right-block-a" href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </footer>
+
     </html>
   );
 };
-
-
