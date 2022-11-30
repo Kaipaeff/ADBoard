@@ -1,3 +1,4 @@
+
 const React = require('react');
 
 module.exports = function Layout({ children }) {
@@ -93,3 +94,5 @@ module.exports = function Layout({ children }) {
     </html>
   );
 };
+
+
