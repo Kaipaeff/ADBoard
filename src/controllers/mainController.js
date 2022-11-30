@@ -1,3 +1,4 @@
+
 const renderTemplate = require('../lib/renderReactModel');
 
 const { Flat, House, Apartment } = require('../../db/models');
