@@ -1,7 +1,6 @@
 const React = require('react');
 
 module.exports = function Layout({ children, user }) {
-
     return (
         <html lang="en">
             <head>
@@ -19,7 +18,6 @@ module.exports = function Layout({ children, user }) {
                 <link rel="stylesheet" href="/styles/main.css" />
                 <title>RealEast</title>
             </head>
-
             <body>
                 {user ? (
                     <header className="header">
@@ -39,7 +37,7 @@ module.exports = function Layout({ children, user }) {
                                                 <a className="nav-link floor" href="#">Комната</a>
                                             </li>
                                             <li className="nav-item">
-                                                <a className="nav-link house" href="#">Дом</a>
+                                                <a className="nav-link house" href="/house">Дом</a>
                                             </li>
                                             <img className="img-heart" src="/img/heart.png" alt="heart" />
                                             <li className="nav-item">
@@ -87,7 +85,7 @@ module.exports = function Layout({ children, user }) {
                                                 <a className="nav-link floor" href="#">Комната</a>
                                             </li>
                                             <li className="nav-item">
-                                                <a className="nav-link house" href="#">Дом</a>
+                                                <a className="nav-link house" href="/house">Дом</a>
                                             </li>
                                             <img className="img-heart" src="/img/heart.png" alt="heart" />
                                             <li className="nav-item">
