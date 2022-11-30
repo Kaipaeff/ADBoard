@@ -1,15 +1,11 @@
-.cards {
+/* .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
-}
+} */
 
-h1 {
-  color: red;
-}
-
-.card-body {
+/* .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,13 +19,12 @@ h1 {
 
 
 .card-body img {
-
   height: 170px;
   object-fit: cover;
-}
+} */
 
-.cards {
+/* .cards {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
