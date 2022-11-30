@@ -1,51 +1,72 @@
-require('dotenv').config();
-require('@babel/register');
+require("dotenv").config();
+require("@babel/register");
 
 // const cors = require('cors');
-const path = require('path');
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const path = require("path");
+const morgan = require("morgan");
 
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
-const check = require("../db/connectCheck")
+const check = require("../db/connectCheck");
+const indexRoutes = require("./routes/indexRoutes");
+const loginRoutes = require("./routes/loginRoutes");
+const regRoutes = require("./routes/regRoutes");
+const mainRouter = require('./routers/mainRouters');
 
 const app = express();
 
-const { PORT, SECRET } = process.env;
+const { PORT, SESSION_SECRET } = process.env;
 
 check();
 
-// импорт роутов
-const mainRouter = require('./routers/mainRouters');
+app.use(morgan("dev"));
 
-app.use(morgan('dev'));
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve("public")));
 // app.use(cors({ origin: true, credentials: true, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(session({
-//     name: 'sid',
-//     store: new FileStore({}),
-//     secret: SECRET,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {
-//         maxAge: 1000 * 60 * 60 * 24 * 10,
-//         httpOnly: true,
-//         secure: false,
-//     }   //secure: елси https протокол, то ставим true
-// }))
 
-// app.use((req, res, next) => {
-//     console.log('USER=====>>>>>', req.session.username);
-//     next();
-// });
+const sessionConfig = {
+  name: "sid",
+  store: new FileStore(),
+  secret: SESSION_SECRET ?? "secret",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 2,
+    httpOnly: true,
+  },
+};
 
+
+app.use(session(sessionConfig));
+
+
+app.use("/login", loginRoutes);
+app.use("/register", regRoutes);
 app.use('/', mainRouter);
 
-app.listen(PORT, async () => {
-    console.log(`Сервер поднят на ${PORT} порту!`);
+app.get("/logout", async (req, res) => {
+  console.log(req.query);
+  try {
+    if (req.session.newUser) {
+      req.session.destroy(() => {
+        res.clearCookie("sid");
+        res.redirect("/");
+      });
+    } else {
+      res.redirect("/login");
+    }
+  } catch (error) {
+    res.send(`Error ------> ${error}`);
+  }
 });
+
+app.listen(PORT ?? 3000, () => {
+  console.log(`Сервер поднят на ${PORT} порту!`);
+});
+
+
+
