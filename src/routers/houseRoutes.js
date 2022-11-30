@@ -4,6 +4,6 @@ const router = express.Router();
 
 const { renderHousePage } = require("../controllers/housePageControllers");
 
-router.get("/house", renderHousePage);
+router.get("/", renderHousePage);
 
 module.exports = router;
