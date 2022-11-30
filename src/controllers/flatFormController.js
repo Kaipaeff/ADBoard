@@ -1,5 +1,5 @@
 const renderTemplate = require('../lib/renderReactModule');
-const Fflat = require('../views/Flat');
+const Fflat = require('../views/AddFlat');
 const { Flat } = require('../../db/models');
 
 const renderFlat = (req, res) => {

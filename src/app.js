@@ -10,7 +10,9 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
 const mainRouter = require('./routers/mainRouter');
-const flatRouter = require('./routers/flatRouter')
+const flatFormRouter = require('./routers/flatFormRouter');
+const houseFormRouter = require('./routers/houseFormRouter');
+const apartFormRouter = require('./routers/apartmentFormRouter');
 
 const check = require("../db/connectCheck")
 
@@ -46,7 +48,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', mainRouter);
 
-app.use('/form/flat', flatRouter);
+app.use('/form/flat', flatFormRouter);
+app.use('/form/house', houseFormRouter);
+app.use('/form/apartment', apartFormRouter);
 
 app.listen(PORT, async () => {
     console.log(`Сервер поднят на ${PORT} порту!`);
