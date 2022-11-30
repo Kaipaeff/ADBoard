@@ -8,7 +8,7 @@ function Main({
   return (
     <Layout user={user}>
       <div className="container">
-        <a href="/" className="back">Главная</a>
+        {/* <a href="/" className="back">Главная</a> */}
         {/* <main className="main"> */}
         <div data-cards="123" className="cards">
           {flat.map((entry) => (

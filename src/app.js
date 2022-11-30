@@ -1,6 +1,9 @@
 require('dotenv').config();
 require('@babel/register');
 
+const renderTemplate = require('./lib/renderReactModel');
+const Contact = require('./views/Contact');
+
 // const cors = require('cors');
 const express = require('express');
 const path = require('path');
@@ -12,6 +15,7 @@ const FileStore = require('session-file-store')(session);
 const check = require('../db/connectCheck');
 
 const apartRoutes = require('./routers/apartRoutes');
+const flatRoutes = require('./routers/flatRoutes');
 
 const loginRoutes = require('./routers/loginRoutes');
 const regRoutes = require('./routers/regRoutes');
@@ -49,6 +53,7 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 
 app.use('/', apartRoutes);
+app.use('/', flatRoutes);
 
 app.use('/login', loginRoutes);
 app.use('/register', regRoutes);
@@ -72,6 +77,10 @@ app.get('/logout', async (req, res) => {
   } catch (error) {
     res.send(`Error ------> ${error}`);
   }
+});
+
+app.get('/contact', (req, res) => {
+  renderTemplate(Contact, {}, res);
 });
 
 app.listen(PORT ?? 3000, () => {

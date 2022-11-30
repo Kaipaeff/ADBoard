@@ -21,6 +21,7 @@ const regUser = async (req, res) => {
     req.session.save(() => {
       res.redirect('/');
     });
+    res.redirect('/login');
   } catch (error) {
     res.send(`Error ------> ${error}`);
   }

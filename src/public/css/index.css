@@ -1,9 +1,16 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 body,
 html {
-  font-family: 'Roboto', sans-serif;
   min-width: 1440px;
   margin: 0;
   padding: 0%;
+}
+
+html {
+  position: relative;
 }
 
 
@@ -52,6 +59,10 @@ html {
   padding: 0%;
 }
 
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
 .house {
   margin-right: 160px;
   color: #5A5A5A !important;
@@ -71,6 +82,11 @@ html {
 }
 
 .exit {
+  color: #5A5A5A !important;
+  font-size: 18px;
+}
+
+.dropdown-toggle {
   color: #5A5A5A !important;
   font-size: 18px;
 }
@@ -144,9 +160,9 @@ html {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin-bottom: 100px;
+  margin-bottom: 360px;
   padding: 0;
-  margin-top: 180px;
+  margin-top: 200px;
 
 }
 
@@ -201,6 +217,8 @@ html {
 
 
 footer {
+  position: absolute;
+  bottom: 0;
   background-color: #F8F9FA;
   height: 260px;
   width: 100%;
@@ -252,4 +270,71 @@ footer {
 .footer-logo {
   max-width: 150px;
   margin-bottom: 15px;
+}
+
+
+
+/* //////////////////////////////// */
+
+
+.reg-form {
+  margin-top: 80px;
+  margin-bottom: auto;
+  max-width: 300px;
+}
+
+.login-form {
+  margin-top: 150px;
+  margin-bottom: auto;
+  max-width: 300px;
+}
+
+.login-btn,
+.reg-btn {
+  margin-top: 30px;
+  width: 200px;
+}
+
+.dropdown-toggle {
+  margin-right: 30px;
+}
+
+h2 {
+  color: #5A5A5A;
+}
+
+.form-label {
+  margin-bottom: 0;
+}
+
+.form-control {
+  margin-bottom: 8px;
+}
+
+
+.icons-foo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.contact {
+  margin-bottom: 0;
+}
+
+.links-telegram,
+.links-email {
+  width: 30px;
+  height: 30px;
+}
+
+
+.list-group-flush {
+  margin-top: 80px;
+  max-width: 500px;
+}
+
+.list-group-item {
+  font-size: 20px;
 }

@@ -35,7 +35,7 @@ module.exports = function Layout({ children, user }) {
                         <a className="nav-link active apart" aria-current="page" href="/apart">Квартира</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link floor" href="#">Комната</a>
+                        <a className="nav-link floor" href="/flat">Комната</a>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link house" href="#">Дом</a>
@@ -44,20 +44,23 @@ module.exports = function Layout({ children, user }) {
                       <li className="nav-item">
                         <a className="nav-link favourite" href="#">Избранное</a>
                       </li>
-                      <img className="img-login" src="/img/login.png" alt="login" />
                       {user.email === 'admin@gmail.com' ? (
-                        <li className="nav-item dropdown">
-                          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Создать Форму
-                          </a>
-                          <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="/form/apartment">Квартира</a></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="/form/flat">Комната</a></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="/form/house">Дом</a></li>
-                          </ul>
-                        </li>
+                        <>
+                          <img className="img-login" src="/img/add.png" alt="login" />
+                          <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Создать
+                            </a>
+                            <ul className="dropdown-menu">
+                              <li><a className="dropdown-item" href="/form/apartment">Квартира</a></li>
+                              <li><hr className="dropdown-divider" /></li>
+                              <li><a className="dropdown-item" href="/form/flat">Комната</a></li>
+                              <li><hr className="dropdown-divider" /></li>
+                              <li><a className="dropdown-item" href="/form/house">Дом</a></li>
+                            </ul>
+                          </li>
+
+                        </>
                       ) : ('')}
                       <img className="img-exit" src="/img/exit.png" alt="exit" />
                       <li className="nav-item">
@@ -160,9 +163,14 @@ module.exports = function Layout({ children, user }) {
           </div>
 
           <div className="right-block">
-            <a className="right-block-a" href="#">Контакты</a>
-            <a className="right-block-a" href="#">Пользовательское соглашение</a>
-            <a className="right-block-a" href="#">Политика конфиденциальности</a>
+            <a className="right-block-a" href="/docs/policy.html">Политика конфиденциальности</a>
+            <a className="right-block-a" href="/docs/agreement.html">Пользовательское соглашение</a>
+
+            <div className="icons-foo">
+              <a href="https://t.me/elbrusbootcamp1"><img className="links-telegram" src="/img/telegram.png" alt="telegarm" /></a>
+              <a href="mailto:name@email.com"><img className="links-email" src="/img/email.png" alt="telegarm" /></a>
+              <a className="right-block-a contact" href="/contact">Контакты</a>
+            </div>
           </div>
         </div>
       </footer>
