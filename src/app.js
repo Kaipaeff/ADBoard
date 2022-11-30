@@ -13,7 +13,7 @@ const check = require("../db/connectCheck");
 
 const loginRoutes = require("./routers/loginRoutes");
 const regRoutes = require("./routers/regRoutes");
-const mainRouter = require('./routers/mainRouters');
+const mainRouter = require('./routers/mainRouter');
 
 const flatFormRouter = require('./routers/flatFormRouter');
 const houseFormRouter = require('./routers/houseFormRouter');
@@ -58,7 +58,7 @@ app.use('/form/apartment', apartFormRouter);
 app.get("/logout", async (req, res) => {
   console.log(req.query);
   try {
-    if (req.session.newUser) {
+      if (req.session.newUser || req.session.admin) {
       req.session.destroy(() => {
         res.clearCookie("sid");
         res.redirect("/");

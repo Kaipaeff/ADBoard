@@ -1,10 +1,10 @@
-const renderTemplate = require('../lib/renderReactModule');
+const renderTemplate = require('../lib/renderReactModel');
 const Hhouse = require('../views/AddHouse');
 const { House } = require('../../db/models');
 
 const renderHouse = (req, res) => {
     try {
-        renderTemplate(Hhouse, null, res);
+        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Hhouse, null, res) : res.send('нету такой страницы');
     } catch (error) {
         console.log(error);
     }
@@ -12,9 +12,13 @@ const renderHouse = (req, res) => {
 
 const postHouse = async (req, res) => {
     try {
-        const { adress, photo, price, size } = req.body;
-        await House.create({ user_id: 1, adress, photo, price, size });
-        res.sendStatus(200);
+        if (req.session.newUser?.email) {
+            const { adress, photo, price, size } = req.body;
+            await House.create({ user_id: req.session.newUser.id, adress, photo, price, size });
+            res.sendStatus(200);
+        } else {
+            res.send('нету такой страницы');
+        }
 
     } catch (error) {
         console.log(error);

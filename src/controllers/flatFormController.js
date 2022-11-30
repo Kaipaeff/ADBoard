@@ -1,10 +1,11 @@
-const renderTemplate = require('../lib/renderReactModule');
+const renderTemplate = require('../lib/renderReactModel');
 const Fflat = require('../views/AddFlat');
 const { Flat } = require('../../db/models');
 
 const renderFlat = (req, res) => {
     try {
-        renderTemplate(Fflat, null, res);
+        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Fflat, null, res) : res.send('нету такой страницы');
+
     } catch (error) {
         console.log(error);
     }
@@ -12,10 +13,14 @@ const renderFlat = (req, res) => {
 
 const postFlat = async (req, res) => {
     try {
-     const { adress, photo, price, size, floor} = req.body;
-        await Flat.create({ user_id: 1, adress, photo, price, size, floor });
-        res.sendStatus(200);
-        
+        if (req.session.newUser?.email) {
+            const { adress, photo, price, size, floor } = req.body;
+            await Flat.create({ user_id: req.session.newUser.id, adress, photo, price, size, floor });
+            res.sendStatus(200);
+        } else {
+            res.send('нету такой страницы');
+        }
+
     } catch (error) {
         console.log(error);
     }
