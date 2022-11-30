@@ -6,16 +6,18 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
+// const session = require('express-session');
+// const FileStore = require('session-file-store')(session);
 
-const check = require("../db/connectCheck")
+const check = require('../db/connectCheck');
 
 const app = express();
 
-const { PORT, SECRET } = process.env;
+const { PORT } = process.env;
 
 check();
+
+const indexRoute = require('./routers/indexRouters');
 
 app.use(morgan('dev'));
 
@@ -40,6 +42,8 @@ app.use(express.urlencoded({ extended: true }));
 //     console.log('USER=====>>>>>', req.session.username);
 //     next();
 // });
+
+app.use('/', indexRoute);
 
 app.listen(PORT, async () => {
     console.log(`Сервер поднят на ${PORT} порту!`);
