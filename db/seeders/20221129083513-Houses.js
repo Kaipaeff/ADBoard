@@ -1,8 +1,6 @@
-'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Houses', [{
       user_id: 1,
       price: 3500,
@@ -11,16 +9,32 @@ module.exports = {
       size: 101,
       createdAt: new Date(),
       updatedAt: new Date(),
-    }
+    }, {
+      user_id: 1,
+      price: 4500,
+      adress: 'Дачная 9',
+      photo: '/img/house/6.jpg',
+      size: 144,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }, {
+      user_id: 1,
+      price: 3800,
+      adress: 'Набережная 12',
+      photo: '/img/house/7.jpg',
+      size: 170,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
     ], {});
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };

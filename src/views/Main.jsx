@@ -1,46 +1,118 @@
 const React = require('react');
-const Layout = require('./Layout')
 
-module.exports = function Main({ user }) {
+const Layout = require('./Layout');
+
+function Main({ flat, house, apartment, user }) {
     return (
         <Layout user={user}>
-            <nav className="navbar navbar-expand-lg bg-light">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Формы
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="/form/flat">Форма комнаты</a></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><a className="dropdown-item" href="/form/house">Форма дома</a></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><a className="dropdown-item" href="/form/apartment">Форма квартиры</a></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled">Disabled</a>
-                            </li>
-                        </ul>
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
+            <main className="main">
+
+
+                <br />
+                <div data-cards="123" className="cards">
+                    {flat.map((entry) => (
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
+                            <div className="card-body">
+                                <figure className="figure">
+                                    <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
+                                </figure>
+                                <p className="card-text">
+                                    Комната
+                                    {' '}
+                                    {entry.size}
+                                    {' '}
+                                    м²
+                                </p>
+                                <p className="card-text">
+                                    {entry.price}
+                                    {' '}
+                                    ₽ в месяц
+                                </p>
+                                <p className="card-text">
+                                    Москва
+                                    {' '}
+                                    {entry.adress}
+                                    ,
+                                    {' '}
+                                    {entry.floor}
+                                    -й этаж
+                                </p>
+                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                                {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
+                            </div>
+                        </div>
+                    ))}
+
+                    {house.map((entry) => (
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
+                            <div className="card-body">
+                                <figure className="figure">
+                                    <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
+                                </figure>
+                                <p className="card-text">
+                                    Дом
+                                    {' '}
+                                    {entry.size}
+                                    {' '}
+                                    м²
+                                </p>
+                                <p className="card-text">
+                                    {entry.price}
+                                    {' '}
+                                    ₽ в месяц
+                                </p>
+                                <p className="card-text" />
+                                <p className="card-text">
+                                    Москва
+                                    {' '}
+                                    {entry.adress}
+                                    {' '}
+                                </p>
+                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                                {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
+                            </div>
+                        </div>
+                    ))}
+
+                    {apartment.map((entry) => (
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
+                            <div className="card-body">
+                                <figure className="figure">
+                                    <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
+                                </figure>
+                                <p className="card-text">
+                                    Квартира
+                                    {' '}
+                                    {entry.size}
+                                    {' '}
+                                    м²
+                                </p>
+                                <p className="card-text">
+                                    {entry.price}
+                                    {' '}
+                                    ₽ в месяц
+                                </p>
+                                <p className="card-text" />
+                                <p className="card-text">
+                                    Москва
+                                    {' '}
+                                    {entry.adress}
+                                    ,
+                                    {' '}
+                                    {entry.floor}
+                                    -й этаж
+                                    {' '}
+                                </p>
+                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                                {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
+                            </div>
+                        </div>
+                    ))}
+
                 </div>
-            </nav>
+            </main>
         </Layout>
     );
-};
+}
+
+module.exports = Main;
