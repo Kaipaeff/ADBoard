@@ -1,5 +1,5 @@
 const isAdmin = (req, res, next) => {
-  if (req.session.newUser === "Anton") {
+  if (req.session.newUser.email === "admin@gmail.com") {
     next();
   } else {
     res.redirect("/");

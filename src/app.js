@@ -6,14 +6,18 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
-const check = require('../db/connectCheck');
-const loginRoutes = require('./routers/loginRoutes');
-const regRoutes = require('./routers/regRoutes');
-const mainRouter = require('./routers/mainRouters');
-const apartRouter = require('./routers/apartRoutes');
+const check = require("../db/connectCheck");
+
+const loginRoutes = require("./routers/loginRoutes");
+const regRoutes = require("./routers/regRoutes");
+const mainRouter = require('./routers/mainRouter');
+
+const flatFormRouter = require('./routers/flatFormRouter');
+const houseFormRouter = require('./routers/houseFormRouter');
+const apartFormRouter = require('./routers/apartmentFormRouter');
 
 const app = express();
 
@@ -45,12 +49,16 @@ app.use(session(sessionConfig));
 app.use('/login', loginRoutes);
 app.use('/register', regRoutes);
 app.use('/', mainRouter);
-app.use('/', apartRouter);
+
+app.use('/form/flat', flatFormRouter);
+app.use('/form/house', houseFormRouter);
+app.use('/form/apartment', apartFormRouter);
+
 
 app.get('/logout', async (req, res) => {
   console.log(req.query);
   try {
-    if (req.session.newUser) {
+      if (req.session.newUser || req.session.admin) {
       req.session.destroy(() => {
         res.clearCookie('sid');
         res.redirect('/');
@@ -65,4 +73,5 @@ app.get('/logout', async (req, res) => {
 
 app.listen(PORT ?? 3000, () => {
   console.log(`Сервер поднят на ${PORT} порту!`);
+
 });
