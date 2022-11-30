@@ -10,7 +10,7 @@ function Main({ flat, house, apartment, user }) {
                 <br />
                 <div data-cards="123" className="cards">
                     {flat.map((entry) => (
-                        <div className="card" style={{ width: '18rem' }} key={entry.id}>
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
                             <div className="card-body">
                                 <figure className="figure">
                                     <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
@@ -43,7 +43,7 @@ function Main({ flat, house, apartment, user }) {
                     ))}
 
                     {house.map((entry) => (
-                        <div className="card" style={{ width: '18rem' }} key={entry.id}>
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
                             <div className="card-body">
                                 <figure className="figure">
                                     <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
@@ -74,7 +74,7 @@ function Main({ flat, house, apartment, user }) {
                     ))}
 
                     {apartment.map((entry) => (
-                        <div className="card" style={{ width: '18rem' }} key={entry.id}>
+                        <div className="card" style={{ width: '16rem' }} key={entry.id}>
                             <div className="card-body">
                                 <figure className="figure">
                                     <img src={entry.photo} className="card-img-top figure-img img-fluid rounded" alt="" />

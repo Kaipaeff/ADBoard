@@ -1,7 +1,7 @@
 
 const React = require('react');
 
-module.exports = function Layout({ children }) {
+module.exports = function Layout({ children, user }) {
   return (
     <html lang="en">
       <head>
@@ -16,6 +16,7 @@ module.exports = function Layout({ children }) {
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/styles/main.css" />
         <title>RealEast</title>
       </head>
 
@@ -45,11 +46,11 @@ module.exports = function Layout({ children }) {
                     </li>
                     <img className="img-login" src="/img/login.png" alt="login" />
                     <li className="nav-item">
-                      <a className="nav-link register" href="#">Регистрация</a>
+                      <a className="nav-link register" href="/register">Регистрация</a>
                     </li>
                     <img className="img-exit" src="/img/exit.png" alt="exit" />
                     <li className="nav-item">
-                      <a className="nav-link exit" href="#">Вход</a>
+                      <a className="nav-link exit" href="/login">Вход</a>
                     </li>
 
                   </ul>
