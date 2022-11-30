@@ -13,13 +13,16 @@ const renderHouse = (req, res) => {
 const postHouse = async (req, res) => {
     try {
         if (req.session.newUser?.email) {
-            const { adress, photo, price, size } = req.body;
-            await House.create({ user_id: req.session.newUser.id, adress, photo, price, size });
+            const {
+                adress, photo, price, size,
+            } = req.body;
+            await House.create({
+                user_id: req.session.newUser.id, adress, photo, price, size,
+            });
             res.sendStatus(200);
         } else {
             res.send('нету такой страницы');
         }
-
     } catch (error) {
         console.log(error);
     }
