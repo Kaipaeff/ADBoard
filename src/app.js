@@ -14,6 +14,7 @@ const check = require("../db/connectCheck");
 const loginRoutes = require("./routers/loginRoutes");
 const regRoutes = require("./routers/regRoutes");
 const mainRouter = require('./routers/mainRouter');
+const apartRouter = require('./routers/apartRoutes')
 
 const flatFormRouter = require('./routers/flatFormRouter');
 const houseFormRouter = require('./routers/houseFormRouter');
@@ -49,6 +50,8 @@ app.use(session(sessionConfig));
 app.use('/login', loginRoutes);
 app.use('/register', regRoutes);
 app.use('/', mainRouter);
+
+app.use('/apart', apartRouter)
 
 app.use('/form/flat', flatFormRouter);
 app.use('/form/house', houseFormRouter);
