@@ -9,6 +9,9 @@ const morgan = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
+const mainRouter = require('./routers/mainRouter');
+const flatRouter = require('./routers/flatRouter')
+
 const check = require("../db/connectCheck")
 
 const app = express();
@@ -40,6 +43,10 @@ app.use(express.urlencoded({ extended: true }));
 //     console.log('USER=====>>>>>', req.session.username);
 //     next();
 // });
+
+app.use('/', mainRouter);
+
+app.use('/form/flat', flatRouter);
 
 app.listen(PORT, async () => {
     console.log(`Сервер поднят на ${PORT} порту!`);
