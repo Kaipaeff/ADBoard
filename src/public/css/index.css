@@ -163,12 +163,11 @@ html {
   margin-bottom: 360px;
   padding: 0;
   margin-top: 200px;
-
 }
 
 .cards {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
@@ -176,6 +175,20 @@ html {
   border-radius: 20px;
   gap: 20px;
 }
+
+.cards-apart,
+.cards-flat,
+.cards-house {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  border: 1px solid #b9b9b9;
+  border-radius: 20px;
+  gap: 20px;
+}
+
 
 .card {
   border-radius: 20px;
@@ -186,8 +199,9 @@ html {
 
 .card:hover {
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0px 20px 35px #0d6dfd3b;
+  box-shadow: 0px 15px 20px #0d6dfd3b;
   transform: translateY(-5px);
+  border: none;
 }
 
 
@@ -210,7 +224,15 @@ html {
 }
 
 .card-text {
+  font-weight: 700;
   margin-bottom: 5px;
+  color: #656566;
+  text-decoration: none !important;
+}
+
+.card-text:hover {
+  color: #656566;
+  text-decoration: none !important;
 }
 
 .figure {
