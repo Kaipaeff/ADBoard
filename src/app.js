@@ -29,6 +29,10 @@ const flatFormRouter = require('./routers/flatFormRouter');
 const houseFormRouter = require('./routers/houseFormRouter');
 const apartFormRouter = require('./routers/apartmentFormRouter');
 
+// const oneApartRouter = require('./routers/moreRouters');
+// const oneFlatRouter = require('./routers/moreRouters');
+const oneItemRouter = require('./routers/moreRouters');
+
 const app = express();
 
 const { PORT, SESSION_SECRET } = process.env;
@@ -68,6 +72,8 @@ app.use('/house', houseRouter);
 app.use('/form/flat', flatFormRouter);
 app.use('/form/house', houseFormRouter);
 app.use('/form/apartment', apartFormRouter);
+
+app.use('/home', oneItemRouter);
 
 app.get('/logout', async (req, res) => {
   console.log(req.query);
