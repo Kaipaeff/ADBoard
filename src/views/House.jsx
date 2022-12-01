@@ -32,7 +32,7 @@ module.exports = function House({ house, user }) {
                   {entry.adress}
                   {' '}
                 </p>
-                {user.email === 'admin@gmail.com' ? (<a href={`/house/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+                {user?.email === 'admin@gmail.com' ? (<a href={`/house/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
                   (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
                   )}
                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}

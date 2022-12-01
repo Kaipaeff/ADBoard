@@ -35,7 +35,7 @@ function Flat({ flat, user }) {
                   {el.floor}
                   -й этаж
                 </p>
-                {user.email === 'admin@gmail.com' ? (<a href={`/flat/update/${el.id}`} className="btn btn-primary">Редактировать</a>) :
+                {user?.email === 'admin@gmail.com' ? (<a href={`/flat/update/${el.id}`} className="btn btn-primary">Редактировать</a>) :
                   (<a href={`/tasks/${el.id}`} className="btn btn-primary">Подробнее</a>
                   )}
               </div>

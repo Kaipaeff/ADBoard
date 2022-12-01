@@ -35,7 +35,7 @@ function Apart({ apart, user }) {
                   {el.floor}
                   -й этаж
                 </p>
-                {user.email === 'admin@gmail.com' ? (<a href={`/apart/update/${el.id}`} className="btn btn-primary">Редактировать</a>) : 
+                {user?.email === 'admin@gmail.com' ? (<a href={`/apart/update/${el.id}`} className="btn btn-primary">Редактировать</a>) : 
                   (<a href={`/tasks/${el.id}`} className="btn btn-primary">Подробнее</a>
                 )}
               </div>
