@@ -1,4 +1,4 @@
-const renderTemplate = require('../lib/renderReactModule');
+const renderTemplate = require('../lib/renderReactModel');
 
 const Main = require('../views/Main');
 

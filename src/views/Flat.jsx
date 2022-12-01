@@ -2,13 +2,13 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-function Apart({ apart, user }) {
+function Flat({ flat, user }) {
   return (
     <Layout user={user}>
       <div className="container">
         {/* <a href="/" className="back">&laquo; На Главную</a> */}
         <div className="cards">
-          {apart?.map((el) => (
+          {flat?.map((el) => (
             <div className="card" style={{ width: '16rem' }} key={el.id}>
               <div className="card-body">
                 <figure className="figure">
@@ -45,4 +45,4 @@ function Apart({ apart, user }) {
   );
 }
 
-module.exports = { Apart };
+module.exports = Flat;

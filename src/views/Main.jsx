@@ -5,6 +5,7 @@ const Layout = require('./Layout');
 function Main({
     flat, house, apartment, user,
 }) {
+
     return (
         <Layout user={user}>
 

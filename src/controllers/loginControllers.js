@@ -1,8 +1,8 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
-const renderTemplate = require("../lib/renderReactModel");
-const Login = require("../views/Login");
-const { User } = require("../../db/models");
+const renderTemplate = require('../lib/renderReactModel');
+const Login = require('../views/Login');
+const { User } = require('../../db/models');
 
 const renderLogin = (req, res) => {
   renderTemplate(Login, {}, res);
@@ -17,10 +17,10 @@ const loginUser = async (req, res) => {
     if (passCheck) {
       req.session.newUser = user;
       req.session.save(() => {
-        res.redirect("/");
+        res.redirect('/');
       });
     } else {
-      res.redirect("/login");
+      res.redirect('/login');
     }
   } catch (error) {
     res.send(`Error ------> ${error}`);

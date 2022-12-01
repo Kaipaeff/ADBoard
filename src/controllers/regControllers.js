@@ -1,9 +1,9 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
-const renderTemplate = require("../lib/renderReactModel");
-const Register = require("../views/Register");
+const renderTemplate = require('../lib/renderReactModel');
+const Register = require('../views/Register');
 
-const { User } = require("../../db/models");
+const { User } = require('../../db/models');
 
 const renderRegister = (req, res) => {
   renderTemplate(Register, null, res);
@@ -19,8 +19,9 @@ const regUser = async (req, res) => {
     // req.session.newUser = newUser.name;
 
     req.session.save(() => {
-      res.redirect("/");
+      res.redirect('/');
     });
+    res.redirect('/login');
   } catch (error) {
     res.send(`Error ------> ${error}`);
   }

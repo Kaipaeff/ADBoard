@@ -13,11 +13,15 @@ const renderApart = (req, res) => {
 const postApart = async (req, res) => {
     try {
         if (req.session.newUser?.email) {
-            const { adress, photo, price, size, floor, type } = req.body;
-            await Apartment.create({ user_id: req.session.newUser.id, adress, photo, price, size, floor, type });
+            const {
+                adress, photo, price, size, floor, type,
+            } = req.body;
+            await Apartment.create({
+                user_id: req.session.newUser.id, adress, photo, price, size, floor, type,
+            });
             res.sendStatus(200);
         } else {
-            res.send('нету такой страницы')
+            res.send('нету такой страницы');
         }
     } catch (error) {
         console.log(error);
