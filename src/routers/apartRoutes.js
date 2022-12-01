@@ -2,6 +2,6 @@ const router = require('express').Router();
 
 const { renderApart } = require('../controllers/apartControllers');
 
-router.get('/apart', renderApart);
+router.get('/', renderApart);
 
 module.exports = router;

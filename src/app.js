@@ -5,25 +5,29 @@ const renderTemplate = require('./lib/renderReactModel');
 const Contact = require('./views/Contact');
 
 // const cors = require('cors');
+
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 
-const session = require('express-session');
-const FileStore = require('session-file-store')(session);
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
-const check = require('../db/connectCheck');
 
 const apartRoutes = require('./routers/apartRoutes');
 const flatRoutes = require('./routers/flatRoutes');
 
 const loginRoutes = require('./routers/loginRoutes');
 const regRoutes = require('./routers/regRoutes');
+
 const mainRouter = require('./routers/mainRouter');
+const houseRouter = require("./routers/houseRoutes");
+const apartRouter = require('./routers/apartRoutes')
 
 const flatFormRouter = require('./routers/flatFormRouter');
 const houseFormRouter = require('./routers/houseFormRouter');
 const apartFormRouter = require('./routers/apartmentFormRouter');
+
 
 const app = express();
 
@@ -33,7 +37,7 @@ check();
 
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 // app.use(cors({ origin: true, credentials: true, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -52,12 +56,16 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 
-app.use('/', apartRoutes);
+
 app.use('/', flatRoutes);
+
 
 app.use('/login', loginRoutes);
 app.use('/register', regRoutes);
 app.use('/', mainRouter);
+
+app.use('/apart', apartRouter)
+app.use('/house', houseRouter)
 
 app.use('/form/flat', flatFormRouter);
 app.use('/form/house', houseFormRouter);
