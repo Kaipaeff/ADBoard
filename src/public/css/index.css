@@ -177,11 +177,17 @@ html {
   gap: 20px;
 }
 
-
 .card {
   border-radius: 20px;
   border: 1px solid #b9b9b9;
   max-height: 380px;
+  transition: box-shadow 0.2s, ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0px 20px 35px #0d6dfd3b;
+  transform: translateY(-5px);
 }
 
 
@@ -220,7 +226,7 @@ footer {
   position: absolute;
   bottom: 0;
   background-color: #F8F9FA;
-  height: 260px;
+  height: 220px;
   width: 100%;
   padding: 40px 0 40px 0;
 }
@@ -278,13 +284,13 @@ footer {
 
 
 .reg-form {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: auto;
   max-width: 300px;
 }
 
 .login-form {
-  margin-top: 150px;
+  margin-top: 110px;
   margin-bottom: auto;
   max-width: 300px;
 }
@@ -331,10 +337,39 @@ h2 {
 
 
 .list-group-flush {
-  margin-top: 80px;
+  margin-top: 40px;
   max-width: 500px;
 }
 
 .list-group-item {
   font-size: 20px;
+}
+
+/* ///////////////////////////////////////////////// */
+
+.item-add-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.small-form-input {
+  max-width: 100px;
+  margin: 0 !important;
+}
+
+.input-div {
+  margin-top: 5px;
+}
+
+.add-item-container {
+  margin-bottom: 270px;
+}
+
+.add-item-container-flat {
+  margin-bottom: 320px;
+}
+
+.add-item-container-house {
+  margin-bottom: 395px;
 }

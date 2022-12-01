@@ -1,7 +1,6 @@
 const React = require('react');
 
 module.exports = function Layout({ children, user }) {
-
   return (
     <html lang="en">
       <head>
@@ -17,7 +16,7 @@ module.exports = function Layout({ children, user }) {
         />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/styles/main.css" />
-        <title>RealEast</title>
+        <title>ADBoard</title>
       </head>
 
       <body>
@@ -39,7 +38,7 @@ module.exports = function Layout({ children, user }) {
                         <a className="nav-link floor" href="/flat">Комната</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link house" href="#">Дом</a>
+                        <a className="nav-link house" href="/house">Дом</a>
                       </li>
                       <img className="img-heart" src="/img/heart.png" alt="heart" />
                       <li className="nav-item">
@@ -146,23 +145,22 @@ module.exports = function Layout({ children, user }) {
 
         {children}
 
+      </body>
 
-            </body>
+      <footer>
+        <div className="footer-container">
+          <div className="left-block">
+            <a className="footer-logo" href="/"><img src="/img/logo.png" alt="logo" /></a>
+            <span>УДОБНЫЙ ПОИСК</span>
+            <span>АРЕНДНОЙ НЕДВИЖИМОСТИ</span>
+            <span>© Bears-2022</span>
+          </div>
 
-            <footer>
-                <div className="footer-container">
-                    <div className="left-block">
-                        <a className="footer-logo" href="/"><img src="/img/logo.png" alt="logo" /></a>
-                        <span>УДОБНЫЙ ПОИСК</span>
-                        <span>АРЕНДНОЙ НЕДВИЖИМОСТИ</span>
-                        <span>© Bears-2022</span>
-                    </div>
-
-                    <div className="center-block">
-                        <a className="center-block-a" href="/apart">Квартиры</a>
-                        <a className="center-block-a" href="/flat">Комнаты</a>
-                        <a className="center-block-a" href="/house">Дома</a>
-                    </div>
+          <div className="center-block">
+            <a className="center-block-a" href="/apart">Квартиры</a>
+            <a className="center-block-a" href="/flat">Комнаты</a>
+            <a className="center-block-a" href="/house">Дома</a>
+          </div>
 
           <div className="right-block">
             <a className="right-block-a" href="/docs/policy.html">Политика конфиденциальности</a>
@@ -177,7 +175,6 @@ module.exports = function Layout({ children, user }) {
         </div>
       </footer>
 
-
-        </html>
-    );
+    </html>
+  );
 };
