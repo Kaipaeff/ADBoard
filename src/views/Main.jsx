@@ -40,7 +40,9 @@ function Main({
                                     {entry.floor}
                                     -й этаж
                                 </p>
-                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                                {user?.email === 'admin@gmail.com' ? (<a href={`/flat/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+                                    (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                                    )}
                                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
                             </div>
                         </div>
@@ -73,7 +75,9 @@ function Main({
                                     {' '}
 
                                 </p>
-                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                                {user?.email === 'admin@gmail.com' ? (<a href={`/house/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+                                    (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                                    )}
                                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
                             </div>
                         </div>
@@ -112,7 +116,9 @@ function Main({
 
                                     {' '}
                                 </p>
-                                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                                {user?.email === 'admin@gmail.com' ? (<a href={`/apart/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+                                    (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                                    )}
                                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
                             </div>
                         </div>

@@ -15,7 +15,7 @@ function Apart({ apart, user }) {
                   <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
                 </figure>
                 <p className="card-text">
-                  Комната
+                  Квартира
                   {' '}
                   {el.size}
                   {' '}
@@ -35,7 +35,9 @@ function Apart({ apart, user }) {
                   {el.floor}
                   -й этаж
                 </p>
-                <a href={`/tasks/${el.id}`} className="btn btn-primary">Подробнее</a>
+                {user.email === 'admin@gmail.com' ? (<a href={`/apart/update/${el.id}`} className="btn btn-primary">Редактировать</a>) : 
+                  (<a href={`/tasks/${el.id}`} className="btn btn-primary">Подробнее</a>
+                )}
               </div>
             </div>
           ))}

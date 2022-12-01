@@ -2,12 +2,10 @@ const React = require('react');
 
 const Layout = require('./Layout');
 
-module.exports = function House({house, user}) {
+module.exports = function House({ house, user }) {
   return (
     <Layout user={user}>
-      <main className="main">
-
-        <br />
+      <div className="container">
         <div data-cards="123" className="cards">
           {house?.map((entry) => (
             <div className="card" style={{ width: '16rem' }} key={entry.id}>
@@ -34,13 +32,15 @@ module.exports = function House({house, user}) {
                   {entry.adress}
                   {' '}
                 </p>
-                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Детали</a>
+                {user.email === 'admin@gmail.com' ? (<a href={`/house/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+                  (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                  )}
                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
               </div>
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </Layout>
   );
 };
