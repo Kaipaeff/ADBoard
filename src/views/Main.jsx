@@ -43,6 +43,9 @@ function Main({
                     {el_flat.floor}
                     -й этаж
                   </a>
+//                                                   {user?.email === 'admin@gmail.com' ? (<a href={`/apart/update/${entry.id}`} className="btn btn-primary">Редактировать</a>) :
+//                                     (<a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+//                                     )}
                   {/* <a href={`/home/flat/${el_flat.id}`} className="btn btn-primary moreBtn">Подробнее</a> */}
                 </div>
               </div>
