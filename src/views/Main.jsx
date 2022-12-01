@@ -39,7 +39,7 @@ function Main({
                   {entry.floor}
                   -й этаж
                 </p>
-                <a href={`/tasks/${entry.id}`} className="btn btn-primary">Подробнее</a>
+                <a href={`/tasks/${entry.id}`} className="btn btn-primary more">Подробнее</a>
                 {/* <a href="#" data-delBtn={entry.id} className="m-2 btn btn-danger">DELETE</a> */}
               </div>
             </div>

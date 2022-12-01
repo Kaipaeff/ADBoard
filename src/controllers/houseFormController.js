@@ -3,8 +3,9 @@ const Hhouse = require('../views/AddHouse');
 const { House } = require('../../db/models');
 
 const renderHouse = (req, res) => {
+    const user = req.session.newUser;
     try {
-        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Hhouse, null, res) : res.send('нету такой страницы');
+        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Hhouse, { user }, res) : res.send('нету такой страницы');
     } catch (error) {
         console.log(error);
     }

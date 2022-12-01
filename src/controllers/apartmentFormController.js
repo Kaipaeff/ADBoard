@@ -3,8 +3,9 @@ const Apart = require('../views/AddApartment');
 const { Apartment } = require('../../db/models');
 
 const renderApart = (req, res) => {
+    const user = req.session.newUser;
     try {
-        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Apart, null, res) : res.send('нету такой страницы');
+        req.session.newUser?.email === 'admin@gmail.com' ? renderTemplate(Apart, { user }, res) : res.send('нету такой страницы');
     } catch (error) {
         console.log(error);
     }

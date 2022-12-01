@@ -226,7 +226,7 @@ footer {
   position: absolute;
   bottom: 0;
   background-color: #F8F9FA;
-  height: 260px;
+  height: 220px;
   width: 100%;
   padding: 40px 0 40px 0;
 }
@@ -284,13 +284,13 @@ footer {
 
 
 .reg-form {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: auto;
   max-width: 300px;
 }
 
 .login-form {
-  margin-top: 130px;
+  margin-top: 110px;
   margin-bottom: auto;
   max-width: 300px;
 }
@@ -343,4 +343,33 @@ h2 {
 
 .list-group-item {
   font-size: 20px;
+}
+
+/* ///////////////////////////////////////////////// */
+
+.item-add-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.small-form-input {
+  max-width: 100px;
+  margin: 0 !important;
+}
+
+.input-div {
+  margin-top: 5px;
+}
+
+.add-item-container {
+  margin-bottom: 270px;
+}
+
+.add-item-container-flat {
+  margin-bottom: 320px;
+}
+
+.add-item-container-house {
+  margin-bottom: 395px;
 }

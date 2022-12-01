@@ -16,7 +16,7 @@ module.exports = function Layout({ children, user }) {
         />
         <link rel="stylesheet" href="/css/index.css" />
         <link rel="stylesheet" href="/styles/main.css" />
-        <title>RealEast</title>
+        <title>ADBoard</title>
       </head>
 
       <body>
@@ -38,7 +38,7 @@ module.exports = function Layout({ children, user }) {
                         <a className="nav-link floor" href="/flat">Комната</a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link house" href="#">Дом</a>
+                        <a className="nav-link house" href="/house">Дом</a>
                       </li>
                       <img className="img-heart" src="/img/heart.png" alt="heart" />
                       <li className="nav-item">

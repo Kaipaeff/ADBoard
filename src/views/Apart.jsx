@@ -15,7 +15,7 @@ function Apart({ apart, user }) {
                   <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
                 </figure>
                 <p className="card-text">
-                  Комната
+                  Квартира
                   {' '}
                   {el.size}
                   {' '}
