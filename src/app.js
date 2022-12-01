@@ -10,11 +10,12 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 
-const session = require("express-session");
-const FileStore = require("session-file-store")(session);
-
 const check = require('../db/connectCheck');
 
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
+
+// const apartRoutes = require('./routers/apartRoutes');
 
 const loginRoutes = require('./routers/loginRoutes');
 const regRoutes = require('./routers/regRoutes');
@@ -33,6 +34,7 @@ const taskUpdateApartRouter = require('./routers/taskUpdateApartRouter');
 const taskUpdateFlatRouter = require('./routers/taskUpdateFlatRouter');
 const taskUpdateHouseRouter = require('./routers/taskUpdateHouseRouter');
 
+const oneItemRouter = require('./routers/moreRouters');
 
 const app = express();
 
@@ -42,7 +44,7 @@ check();
 
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use(cors({ origin: true, credentials: true, optionsSuccessStatus: 200 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -76,6 +78,8 @@ app.use('/form/apartment', apartFormRouter);
 app.use('/apart/update', taskUpdateApartRouter);
 app.use('/flat/update', taskUpdateFlatRouter);
 app.use('/house/update', taskUpdateHouseRouter);
+
+app.use('/home', oneItemRouter);
 
 app.get('/logout', async (req, res) => {
     console.log(req.query);
