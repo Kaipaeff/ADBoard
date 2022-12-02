@@ -41,7 +41,6 @@ module.exports = function House({ house, user }) {
           ))}
         </div>
       </div>
-
     </Layout>
   );
 };
