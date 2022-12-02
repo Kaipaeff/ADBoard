@@ -31,7 +31,7 @@ module.exports = {
     }, {
       user_id: 1,
       price: 900,
-      adress: 'Мирная 14',
+      adress: 'Заводская 14',
       photo: '/img/flat/4.jpg',
       size: 18,
       floor: 5,
@@ -68,8 +68,8 @@ module.exports = {
     }, {
       user_id: 1,
       price: 900,
-      adress: 'Мирная 14',
-      photo: '/img/flat/4.jpg',
+      adress: 'Заводская 14',
+      photo: '/img/flat/1.jpg',
       size: 18,
       floor: 5,
       createdAt: new Date(),

@@ -132,8 +132,10 @@ module.exports = function Layout({ children, user }) {
               <option value="1">2 комнаты</option>
               <option value="1">3 комнаты</option>
               <option value="1">3+ комнаты</option>
-
             </select>
+
+            <button className="show-btn" type="submit">Показать</button>
+
           </div>
         </div>
 

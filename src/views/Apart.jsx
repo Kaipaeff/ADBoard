@@ -15,19 +15,19 @@ function Apart({ apart, user }) {
                   <figure className="figure">
                     <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
                   </figure>
-                  <p className="card-text">
+                  <a className="card-text-apart">
                     Квартира
                     {' '}
                     {el.size}
                     {' '}
                     м²
-                  </p>
-                  <p className="card-text">
+                  </a>
+                  <a className="card-text-apart">
                     {el.price}
                     {' '}
                     ₽ в месяц
-                  </p>
-                  <p className="card-text">
+                  </a>
+                  <a className="card-text-apart">
                     Москва
                     {' '}
                     {el.adress}
@@ -35,7 +35,7 @@ function Apart({ apart, user }) {
                     {' '}
                     {el.floor}
                     -й этаж
-                  </p>
+                  </a>
                   {/* <a href={`/home/apart/${el.id}`} className="btn btn-primary moreBtn">Подробнее</a> */}
                 </div>
               </div>
