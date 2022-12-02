@@ -6,70 +6,77 @@ function Flat({ flat, user }) {
   return (
     <Layout user={user}>
       <div className="container">
-        {/* <a href="/" className="back">&laquo; На Главную</a> */}
         <div className="cards cards-flat">
-          {flat?.map((el) => (
-//             <div className="card" style={{ width: '16rem' }} key={el.id}>
-//               <div className="card-body">
-//                 <figure className="figure">
-//                   <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
-//                 </figure>
-//                 <p className="card-text">
-//                   Комната
-//                   {' '}
-//                   {el.size}
-//                   {' '}
-//                   м²
-//                 </p>
-//                 <p className="card-text">
-//                   {el.price}
-//                   {' '}
-//                   ₽ в месяц
-//                 </p>
-//                 <p className="card-text">
-//                   Москва
-//                   {' '}
-//                   {el.adress}
-//                   ,
-//                   {' '}
-//                   {el.floor}
-//                   -й этаж
-//                 </p>
-//                 {user?.email === 'admin@gmail.com' ? (<a href={`/flat/update/${el.id}`} className="btn btn-primary">Редактировать</a>) :
-//                   (<a href={`/tasks/${el.id}`} className="btn btn-primary">Подробнее</a>
-//                   )}
-            <a href={`/home/flat/${el.id}`}>
+          {user?.email === 'admin@gmail.com' ? (
+            <>{flat?.map((el) => (
               <div className="card" style={{ width: '16rem' }} key={el.id}>
                 <div className="card-body">
                   <figure className="figure">
                     <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
                   </figure>
-                  <a className="card-text-flat">
+                  <p className="card-text">
                     Комната
                     {' '}
                     {el.size}
                     {' '}
                     м²
-                  </a>
-                  <a className="card-text-flat">
+                  </p>
+                  <p className="card-text">
                     {el.price}
                     {' '}
                     ₽ в месяц
-                  </a>
-                  <a className="card-text-flat">
-                    Москва,
+                  </p>
+                  <p className="card-text">
+                    Москва
                     {' '}
                     {el.adress}
                     ,
                     {' '}
                     {el.floor}
                     -й этаж
-                  </a>
-                  {/* <a href={`/home/flat/${el.id}`} className="btn btn-primary moreBtn">Подробнее</a> */}
+                  </p>
+                  <a href={`/flat/update/${el.id}`} className="btn btn-primary editBtn">Редактировать</a>
                 </div>
               </div>
-            </a>
-          ))}
+            ))}
+            </>
+          ) :
+            (
+              <>
+                {flat?.map((el) => (
+                  <a href={`/home/flat/${el.id}`}>
+                    <div className="card" style={{ width: '16rem' }} key={el.id}>
+                      <div className="card-body">
+                        <figure className="figure">
+                          <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
+                        </figure>
+                        <a className="card-text-flat">
+                          Комната
+                          {' '}
+                          {el.size}
+                          {' '}
+                          м²
+                        </a>
+                        <a className="card-text-flat">
+                          {el.price}
+                          {' '}
+                          ₽ в месяц
+                        </a>
+                        <a className="card-text-flat">
+                          Москва,
+                          {' '}
+                          {el.adress}
+                          ,
+                          {' '}
+                          {el.floor}
+                          -й этаж
+                        </a>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </>
+            )}
         </div>
       </div>
     </Layout>

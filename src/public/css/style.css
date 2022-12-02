@@ -1,30 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    /* display: flex;    */
-    height: 100vh;
-    width: 100%;
-    /* justify-content: center; */
-
-}
-
-.form__flat {
-    margin-top: 200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 30vh;
-    width: 50%;
-}
-
-.form__container {
-    display: flex;
-    justify-content: center;
-}
-
-.div-attention{
-    background-color: aquamarine;
+.editBtn {
+    width: 175px;
+    margin-top: 10px;
 }
