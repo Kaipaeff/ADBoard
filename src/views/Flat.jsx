@@ -44,27 +44,27 @@ function Flat({ flat, user }) {
                   <figure className="figure">
                     <img src={el.photo} className="card-img-top figure-img img-fluid rounded" alt="" />
                   </figure>
-                  <p className="card-text">
+                  <a className="card-text-flat">
                     Комната
                     {' '}
                     {el.size}
                     {' '}
                     м²
-                  </p>
-                  <p className="card-text">
+                  </a>
+                  <a className="card-text-flat">
                     {el.price}
                     {' '}
                     ₽ в месяц
-                  </p>
-                  <p className="card-text">
-                    Москва
+                  </a>
+                  <a className="card-text-flat">
+                    Москва,
                     {' '}
                     {el.adress}
                     ,
                     {' '}
                     {el.floor}
                     -й этаж
-                  </p>
+                  </a>
                   {/* <a href={`/home/flat/${el.id}`} className="btn btn-primary moreBtn">Подробнее</a> */}
                 </div>
               </div>

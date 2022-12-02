@@ -141,7 +141,75 @@ module.exports = function Layout({ children, user }) {
                         </div>
                     </div>
                 </div>
-            </footer>
+
+              </nav>
+            </div>
+          </header>
+        )}
+
+        <div className="filter-back">
+          <div className="selectors">
+            <select className="form-select">
+              <option selected>Квартира</option>
+              <option value="1">Комната</option>
+              <option value="2">Дом</option>
+            </select>
+
+            <select className="form-select">
+              <option selected>Новостройка</option>
+              <option value="1">Вторичка</option>
+            </select>
+
+            <select className="form-select">
+              <option selected>1 комната</option>
+              <option value="1">2 комнаты</option>
+              <option value="1">3 комнаты</option>
+              <option value="1">3+ комнаты</option>
+            </select>
+
+            <button className="show-btn" type="submit">Показать</button>
+
+          </div>
+        </div>
+
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+          crossOrigin="anonymous"
+        />
+
+        {children}
+
+      </body>
+
+      <footer>
+        <div className="footer-container">
+          <div className="left-block">
+            <a className="footer-logo" href="/"><img src="/img/logo.png" alt="logo" /></a>
+            <span>УДОБНЫЙ ПОИСК</span>
+            <span>АРЕНДНОЙ НЕДВИЖИМОСТИ</span>
+            <span>© Bears-2022</span>
+          </div>
+
+          <div className="center-block">
+            <a className="center-block-a" href="/apart">Квартиры</a>
+            <a className="center-block-a" href="/flat">Комнаты</a>
+            <a className="center-block-a" href="/house">Дома</a>
+          </div>
+
+          <div className="right-block">
+            <a className="right-block-a" href="/docs/policy.html">Политика конфиденциальности</a>
+            <a className="right-block-a" href="/docs/agreement.html">Пользовательское соглашение</a>
+
+            <div className="icons-foo">
+              <a href="https://t.me/elbrusbootcamp1"><img className="links-telegram" src="/img/telegram.png" alt="telegarm" /></a>
+              <a href="mailto:name@email.com"><img className="links-email" src="/img/email.png" alt="telegarm" /></a>
+              <a className="right-block-a contact" href="/contact">Контакты</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
         </html>
 
     );
