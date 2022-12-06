@@ -166,7 +166,7 @@ module.exports = function Layout({ children, user }) {
             <a className="right-block-a" href="/docs/agreement.html">Пользовательское соглашение</a>
 
             <div className="icons-foo">
-              <a href="https://t.me/elbrusbootcamp1"><img className="links-telegram" src="/img/telegram.png" alt="telegarm" /></a>
+              <a href="https://t.me"><img className="links-telegram" src="/img/telegram.png" alt="telegarm" /></a>
               <a href="mailto:name@email.com"><img className="links-email" src="/img/email.png" alt="telegarm" /></a>
               <a className="right-block-a contact" href="/contact">Контакты</a>
             </div>
