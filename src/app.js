@@ -54,7 +54,7 @@ app.use(express.urlencoded({ extended: true }));
 const sessionConfig = {
     name: 'sid',
     store: new FileStore(),
-    secret: SESSION_SECRET ?? 'secret',
+    secret: 'secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
