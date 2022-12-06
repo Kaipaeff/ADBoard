@@ -40,7 +40,7 @@ const oneItemRouter = require('./routers/moreRouters');
 
 const app = express();
 
-const { PORT, SESSION_SECRET } = process.env;
+// const { PORT } = process.env;
 
 // check();
 
@@ -105,6 +105,6 @@ app.get('/contact', (req, res) => {
     renderTemplate(Contact, {}, res);
 });
 
-app.listen(PORT ?? 3000, () => {
-    console.log(`Сервер поднят на ${PORT} порту!`);
+app.listen(3000, () => {
+    console.log(`Сервер поднят на 3000 порту!`);
 });
