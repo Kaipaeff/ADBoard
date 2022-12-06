@@ -1,8 +1,10 @@
 {
-  "name": "rental-housing-service-project",
+  "name": "deploy-to-render",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/app.js --ignore sessions --ext js,jsx",
