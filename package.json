@@ -1,9 +1,13 @@
 {
   "name": "deploy-to-render",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
+  "repository": "https://github.com/Pofigor/adboard",
+  "author": "Pofigor",
+  "license": "MIT",
+  "private": false,
   "engines": {
-    "node": "14.x"
+    "node": ">=14"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,17 +15,11 @@
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
     "db-down": "npx sequelize db:migrate:undo:all; npx sequelize db:drop;"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HDDanya/rental-housing-service-project.git"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HDDanya/rental-housing-service-project/issues"
+    "url": "https://github.com/Pofigor/adboard/issues"
   },
-  "homepage": "https://github.com/HDDanya/rental-housing-service-project#readme",
+  "homepage": "https://github.com/Pofigor/adboard#readme",
   "dependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
