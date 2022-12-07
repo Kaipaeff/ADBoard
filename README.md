@@ -5,6 +5,7 @@ Click on button "Code" and Download ZIP on your computer
 Unzip the archive and open folder with Visual Studio Code
 
 Create an .env file at the root of the project and write inside:
+
 PORT=3001
 
 DATABASE_URL = postgres://pofigor:123@localhost:5432/Rent
