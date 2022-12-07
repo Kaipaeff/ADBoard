@@ -40,7 +40,7 @@ const oneItemRouter = require('./routers/moreRouters');
 
 const app = express();
 
-// const { PORT } = process.env;
+const { PORT, SESSION_SECRET } = process.env;
 
 // check();
 
@@ -54,7 +54,7 @@ app.use(express.urlencoded({ extended: true }));
 const sessionConfig = {
     name: 'sid',
     store: new FileStore(),
-    secret: 'secret',
+    secret: SESSION_SECRET ?? 'secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -105,6 +105,6 @@ app.get('/contact', (req, res) => {
     renderTemplate(Contact, {}, res);
 });
 
-app.listen(3000, () => {
-    console.log(`Сервер поднят на 3000 порту!`);
+app.listen(PORT ?? 3000, () => {
+    console.log(`Сервер поднят на ${PORT} порту!`);
 });
