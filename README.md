@@ -6,7 +6,9 @@ Unzip the archive and open folder with Visual Studio Code
 
 Create an .env file at the root of the project and write inside:
 PORT=3001
+
 DATABASE_URL = postgres://pofigor:123@localhost:5432/Rent
+
 SESSION_SECRET=rdvgfhjfcu8sfjifdSDFguffhfhhjgghkhknjsdrfj
 
 Run command NPM INSTALL on VSC terminal
