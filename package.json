@@ -11,9 +11,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all && nodemon src/app.js --ignore sessions --ext js,jsx",
+    "start": "npx sequelize db:migrate && nodemon src/app.js --ignore sessions --ext js,jsx",
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
-    "db-down": "npx sequelize db:migrate:undo:all; npx sequelize db:drop;"
+    "db-down": "npx sequelize db:migrate:undo:all; npx sequelize db:drop;",
+    "dev": "nodemon src/app.js --ignore sessions --ext js,jsx"
   },
   "keywords": [],
   "bugs": {
